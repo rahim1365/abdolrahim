@@ -1,7 +1,7 @@
 
 [build-system]
 requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+build-backend = "setuptools.build_met
 
 [project]
 name = "my-project"
