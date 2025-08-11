@@ -4,7 +4,7 @@ awesome-python-package/
 │     └─ ci.yml
 ├─ src/
 │  └─ awesome_pkg/
-│     ├─ __init__.py
+│     ├─ __init__.p
 │     └─ cli.py
 ├─ tests/
 │  └─ test_cli.py
