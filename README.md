@@ -13,4 +13,4 @@ awesome-python-package/
 ├─ README.md
 ├─ setup.cfg
 ├─ pyproject.toml
-└─ CONTRIBUTING.md
+└─ CONTRIBUTING.m
