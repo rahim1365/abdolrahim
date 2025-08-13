@@ -11,6 +11,6 @@ awesome-python-package/
 ├─ .gitignore
 ├─ LICENSE
 ├─ README.md
-├─ setup.cfg
+├─ setup.cf
 ├─ pyproject.toml
 └─ CONTRIBUTING.md
