@@ -1,16 +1,24 @@
-awesome-python-package/
-├─ .github/
-│  └─ workflows/
-│     └─ ci.yml
-├─ src/
-│  └─ awesome_pkg/
-│     ├─ __init__.py
-│     └─ cli.py
-├─ tests/
-│  └─ test_cli.py
-├─ .gitignore
-├─ LICENSE
-├─ README.md
-├─ setup.cfg
-├─ pyproject.toml
-└─ CONTRIBUTING.md
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest
+      - name: Run tests
+        run: pytest -q
