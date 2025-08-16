@@ -20,5 +20,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
           pip install pytest
-      - name: Run test
+      - name: Run tests
         run: pytest -q
