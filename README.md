@@ -7,18 +7,23 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  build-test-lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.10"
-      - name: Install
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Use pnpm
         run: |
-          python -m pip install --upgrade pip
-          pip install -e .
-          pip install pytest
-      - name: Run tests
-        run: pytest -q
+          corepack enable
+          corepack prepare pnpm@latest --activate
+      - name: Install deps
+        run: pnpm install --frozen-lockfile=false
+      - name: Lint
+        run: pnpm lint
+      - name: Build
+        run: pnpm build
+      - name: Test
+        run: pnpm test -- --run
