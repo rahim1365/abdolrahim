@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 
-jobs:
+:
   build-test-lint:
     runs-on: ubuntu-latest
     steps:
