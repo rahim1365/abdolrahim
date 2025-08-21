@@ -1,29 +1,23 @@
 name: CI
 
 on:
-  pus:
+  push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  build-test-lint:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
         with:
-          node-version: '20
-          cache: 'pnpm'
-      - name: Use pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
-      - name: Install deps
-        run: pnpm install --frozen-lockfile=false
-      - name: Lint
-        run: pnpm lint
+          toolchain: stable
+          override: true
       - name: Build
-        run: pnpm build
+        run: cargo build --verbose
       - name: Test
-        run: pnpm test -- --run
+        run: cargo test --verbose
