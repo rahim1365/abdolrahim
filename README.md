@@ -15,7 +15,7 @@ jobs:
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: 
+          toolchain: stable
           override: true
       - name: Build
         run: cargo build --verbose
