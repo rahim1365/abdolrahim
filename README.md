@@ -26,7 +26,7 @@ def get_stats(user, repo):
 """
 
 def replace_between(text, start, end, replacement):
-    block = start + "\n" + replacement.strip() + "\n" + end
+    block = start + "\n" + replacement.strip() + "\n" + 
     pattern = re.compile(re.escape(start) + r".*?" + re.escape(end), re.S)
     return re.sub(pattern, block, text)
 
