@@ -1,5 +1,5 @@
 
-mport requests, os, re, sy
+mport requests, o, re, sy
 
 README = "README.md"
 START = "<!-- STATS:START -->"
