@@ -18,7 +18,7 @@ jobs:
           python-version: "3.10"
       - name: Install
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pi
           pip install -e .
           pip install pytest
       - name: Run tests
