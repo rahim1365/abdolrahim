@@ -1,5 +1,4 @@
-
-name: CI
+name: Rust CI
 
 on:
   push:
@@ -8,18 +7,21 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
         with:
-          python-version: "3.10"
-      - name: Install
-        run: |
-          python -m pip install --upgrade 
-          pip install -e .
-          pip install pytest
+          toolchain: stable
+          override: true
+
+      - name: Build
+        run: cargo build --verbose
+
       - name: Run tests
-        run: pytest 
+        run: cargo test --verbose
+
+      - name: Lint
+        run: cargo clippy -- -D warnings
