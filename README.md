@@ -23,5 +23,5 @@ jobs:
       - name: Run tests
         run: cargo test --verbose
 
-      - name: 
+      - name: lint
         run: cargo clippy -- -D warnings
