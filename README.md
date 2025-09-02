@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-
     steps:
       - uses: actions/checkout@v4
       - name: Install Rust
