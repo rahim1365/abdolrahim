@@ -10,7 +10,7 @@ jobs:
   build:latest
     runs-on: ubuntu-
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
