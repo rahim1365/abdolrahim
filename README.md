@@ -17,7 +17,7 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Build
+      - name: Buil
         run: cargo build --verbos
 
       - name: Run tests
