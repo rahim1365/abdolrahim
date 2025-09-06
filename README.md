@@ -1,27 +1,31 @@
-name: Rust CI
+PATTERNS = [
+    (r"AKIA[0-9A-Z]{16}", "AWS Access Key"),
+    (r"AIza[0-9A-Za-z-_]{35}", "Google API Key"),
+    (r"ghp_[0-9a-zA-Z]{36}", "GitHub Token"),
+    (r"(?i)password\s*=\s*['\"].+['\"]", "Hardcoded Password"),
+]
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+def scan_secrets(directory="."):
+    findings = []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith((".py", ".env", ".js", ".json", ".yaml", ".yml")):
+                path = os.path.join(root, file)
+                try:
+                    with open(path, encoding="utf-8", errors="ignore") as f:
+                        for i, line in enumerate(f, 1):
+                            for pattern, desc in PATTERNS:
+                                if re.search(pattern, line):
+                                    findings.append((path, i, desc, line.strip()))
+                except:
+                    pass
+    return findings
 
-jobs:
-  build:latest
-    runs-on: ubuntu-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-
-      - name: Buil
-        run: cargo build --verbos
-
-      - name: Run tests
-        run: cargo test --verbose
-
-      - name: lint
-        run: cargo clippy -- -D warnings
+if __name__ == "__main__":
+    results = scan_secrets()
+    if results:
+        print("🚨 Possible secrets found:\n")
+        for file, line, desc, content in results:
+            print(f"{desc:20} | {file}:{line} -> {content}")
+    else:
+        print("✅ No secrets found")
