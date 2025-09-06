@@ -7,7 +7,7 @@ PATTERNS = [
 
 def scan_secrets(directory="."):
     findings = []
-    for root, _, files in os.walk(directory):
+     root, _, files in os.walk(directory):
         for file in files:
             if file.endswith((".py", ".env", ".js", ".json", ".yaml", ".yml")):
                 path = os.path.join(root, file)
