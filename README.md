@@ -18,7 +18,7 @@ def scan_secrets(directory="."):
                                 if re.search(pattern, line):
                                     findings.append((path, i, desc, line.strip()))
                 except:
-                    pass
+                  
     return findings
 
 if __name__ == "__main__":
