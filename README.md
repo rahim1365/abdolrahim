@@ -12,7 +12,7 @@ def scan_secrets(directory="."):
             if file.endswith((".py", ".env", ".js", ".json", ".yaml", ".yml")):
                 path = os.path.join(root, file)
                 try:
-                    with open(path, encoding="utf-8", errors="ignore") as f:
+                    with open(path, encoding="utf-8", errors="ignore") as :
                         for i, line in enumerate(f, 1):
                             for pattern, desc in PATTERNS:
                                 if re.search(pattern, line):
