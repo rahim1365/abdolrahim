@@ -27,6 +27,6 @@ if __name__ == "__main__":
     if results:
         print("🚨 Possible secrets found:\n")
         for file, line, desc, content in results:
-            print(f"{desc:20} | {file}:{line} -> {content}")
+            print(f"{desc:20} | {file}:{line} -> 
     else:
         print("✅ No secrets found")
