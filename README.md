@@ -3,7 +3,7 @@ use predicates::str::contains;
 
 #[test]
 fn test_greet() {
-    let mut cmd = Command::cargo_bin("advanced-rust-cli").unwrap();
+    let mut cmd = Command::cargo_bin("advanced-rust-cli")
     cmd.arg("greet").arg("--name").arg("Rahim");
     cmd.assert()
         .success()
