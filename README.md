@@ -12,7 +12,7 @@ fn test_greet() {
 
 #[test]
 fn test_bye() {
-    let mut cmd = Command::cargo_bin("advanced-rust-cli").unwrap();
+    let mut cmd = Command::cargo_bin("advanced-rust-cli").unwrap();.unwrap();
     cmd.arg("bye").arg("--name").arg("Rahim");
     cmd.assert()
         .success()
