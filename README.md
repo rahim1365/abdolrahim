@@ -1,4 +1,4 @@
-use assert_cmd::
+use assert_cmd::Command;
 use predicates::str::contains;
 
 #[test]
