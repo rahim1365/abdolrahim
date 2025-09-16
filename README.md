@@ -5,7 +5,7 @@ use predicates::str::contains;
 fn test_greet() {
     let mut cmd = Command::cargo_bin("advanced-rust-cli")
     cmd.arg("greet").arg("--name").arg("Rahim");
-    cmd.assert()
+    
        
        
 }
