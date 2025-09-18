@@ -27,7 +27,7 @@ async def get_item(item_id: int):
 item = _DB.get(item_id)
 if not item:
 raise HTTPException(status_code=404, detail="Item not found")
-
+return item
 
 
 @router.post("/items", response_model=Item, status_code=201)
