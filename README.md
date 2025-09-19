@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from typing import Optional
 
 
-router = APIRouter()
 
 
 class Item(BaseModel):
