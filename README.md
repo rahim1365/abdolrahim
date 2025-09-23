@@ -5,7 +5,7 @@ from typing import Optional
 
 
 
-class Item(BaseModel):
+
 id: Optional[int]
 name: str
 description: Optional[str] = None
