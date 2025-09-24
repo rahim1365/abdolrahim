@@ -21,7 +21,7 @@ async def list_items():
 return list(_DB.values())
 
 
-@router.get("/items/{item_id}", response_model=Item)
+
 async def get_item(item_id: int):
 item = _DB.get(item_id)
 if not item:
