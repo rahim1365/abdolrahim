@@ -8,7 +8,7 @@ use commands::{greet, bRust
 #[command(name = "advanced")]
 #[command(about = "یک CLI پیشرفته با Rust", long_about = None)]گ
     #[arg(short, long, default_value = "config
-    config: String,
+    config: S
 
     #[command(subcommand)]
     command: Commands,
