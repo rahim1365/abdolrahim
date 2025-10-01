@@ -1,33 +1,47 @@
+class Task:
+    def __init__(self, task_id, title):
+        self.id = task_id
+        self.title = title
+        self.done = False
+
+    def mark_done(self):
+        self.done = True
+
+    def __str__(self):
+        status = "✅" if self.done else "❌"
+        return f"[{self.id}] {self.title} {status}"
 
 
+class TaskManager:
+    def __init__(self):
+        self.tasks = []
+        self.counter = 1
 
-use clap::{Parser, Subcommand};
-use config::Config;
-use commands::{greet, bRust
-#[derive(Parser)]
-#[command(name = "advanced")]
-#[command(about = "یک CLI پیشرفته با Rust", long_about = None)]گ
-    #[arg(short, long, default_value = "config
-    config: String,
+    def add_task(self, title):
+        task = Task(self.counter, title)
+        self.tasks.append(task)
+        self.counter += 1
+        print(f"Task added: {title}")
 
-    #[command(subcommand)]
-    command: Commands,
-}
+    def list_tasks(self):
+        if not self.tasks:
+            print("No tasks available.")
+        else:
+            for task in self.tasks:
+                print(task)
 
-#[derive(Subcommand)]
-enum Commanن
-    Greet { #[arg(short, long)] name: Option<String>ن
-    Bye { #[arg(short, long)] name: Option<String> },
-}
+    def mark_done(self, task_id):
+        for task in self.tasks:
+            if task.id == task_id:
+                task.mark_done()
+                print(f"Task {task_id} marked as done.")
+                return
+        print("Task not found.")
 
-fn main() {
-    env_logger::init();
-    let cli = Cli::parse();
-    let cfg = Config::load(&cli.config);
-
-    match cli.command {
-        Commands::Greet { name } => {
-            greet(&name.unwrap_or(cfg.default_name));
-        }
-        Commands::Bye { name } => {
-            bye(&name.unwrap_or(cfg.default_name));
+    def delete_task(self, task_id):
+        for task in self.tasks:
+            if task.id == task_id:
+                self.tasks.remove(task)
+                print(f"Task {task_id} deleted.")
+                return
+        print("Task not found.")
