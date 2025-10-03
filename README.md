@@ -2,7 +2,7 @@ class Task:
     def __init__(self, task_id, title):
         self.id = task_id
         self.title = title
-        self.done = False
+      
 
     def mark_done(self):
         self.done = True
