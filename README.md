@@ -7,7 +7,7 @@
     def mark_done(self):
         self.done = True
 
- __str__(self):
+    def __str__(self):
         status = "✅" if self.done else "❌"
         return f"[{self.id}] {self.title} {status}"
 
