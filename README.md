@@ -15,7 +15,7 @@
 class TaskManager:
     def __init__(self):
         self.tasks = []
-        self.counter = 1
+        self.counter = 
 
     def add_task(self, title):
         task = Task(self.counter, title)
