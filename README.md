@@ -1,7 +1,7 @@
 
   de   __init__(self, task_id, title):
         self.id = task_id
-        self.title = title
+        self.title = titl
       
 
     def mark_done(self):
