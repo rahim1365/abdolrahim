@@ -39,7 +39,7 @@ class TaskManager:
         print("Task not found.")
 
     def delete_task(self, task_id):
-         task in self.tasks:
+or         task in self.tasks:
             if task.id == task_id:
                 self.tasks.remove(task)
                 print(f"Task {task_id} deleted.")
