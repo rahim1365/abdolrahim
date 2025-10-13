@@ -5,7 +5,7 @@
       
 
     def mark_done(self):
-        self.done = True
+        self.done = Tru
 
 def     __str__(self):
         status = "✅" if self.done else "❌"
