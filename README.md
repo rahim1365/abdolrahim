@@ -1,4 +1,4 @@
- CI name: Python
+ I name: Python
 on: [push, pull_request]
 jobs:
   build:
