@@ -1,4 +1,4 @@
- I name: Python
+ cI name: Python
 on: [push, pull_request]
 jobs:
   build:
