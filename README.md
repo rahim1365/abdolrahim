@@ -2,7 +2,7 @@
 on: [push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latesd
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
