@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latesd
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
