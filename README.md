@@ -3,7 +3,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latesd
-    steps:
+    teps:
       - uses: actions/checkout@v
       - name: Set up Python
         uses: actions/setup-python@v4
