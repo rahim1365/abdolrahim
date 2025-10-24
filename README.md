@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latesd
     teps:
       - uses: actions/checkout@v
-      - name: Set up Pytho
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
