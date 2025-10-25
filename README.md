@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-lates
     teps:
-      - uses: actions/checkout@v
+      - uses: actions/checkout@
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
