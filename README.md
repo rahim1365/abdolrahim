@@ -1,4 +1,4 @@
- cI name: Pyth
+ cI name: Pytho
 on: [push, pull_request]
 jobs:
   build:
