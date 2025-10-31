@@ -1,18 +1,24 @@
- cI name: Pytho
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-lat
-    teps:
-      - uses: actions/checkout@
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-      - name: Install dependencie
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Run tests
-        run: |
-          if [ -d tests ]; then pytest -q; else echo "No tests"; fi
+import unittest
+from tasks import TaskManager
+
+class TestTaskManager(unittest.TestCase):
+    def test_add_and_list_tasks(self):
+        manager = TaskManager()
+        manager.add_task("Test Task")
+        self.assertEqual(len(manager.tasks), 1)
+        self.assertEqual(manager.tasks[0].title, "Test Task")
+
+    def test_mark_done(self):
+        manager = TaskManager()
+        manager.add_task("Do homework")
+        manager.mark_done(1)
+        self.assertTrue(manager.tasks[0].done)
+
+    def test_delete_task(self):
+        manager = TaskManager()
+        manager.add_task("Temporary")
+        manager.delete_task(1)
+        self.assertEqual(len(manager.tasks), 0)
+
+if __name__ == "__main__":
+    unittest.main()
