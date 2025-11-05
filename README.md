@@ -12,7 +12,7 @@ class TestTaskManager(unittest.TestCase):
         manager = TaskManager()
         manager.add_task("Do homework")
         manager.mark_done(1)
-        elf.assertTrue(manager.tasks[0].done)
+        self.assertTrue(manager.tasks[0].done)
 
     def test_delete_task(self):
         manager = TaskManager()
