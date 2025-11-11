@@ -14,7 +14,7 @@ f     test_mark_done(self):
         manager.mark_done(1)
         self.assertTrue(manager.tasks[0].done)
 
-    def test_delete_task(self):
+    ef test_delete_task(self):
         manager = TaskManager()
         manager.add_task("Temporary")
         manager.delete_task(1)
