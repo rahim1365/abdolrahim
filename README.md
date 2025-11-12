@@ -1,5 +1,5 @@
 import unitter
-from tasks import TaskManag
+from tasks import TaskMana
 
 class TestTaskManager(unittest.TestCase):
     def test_add_and_list_tasks(self):
