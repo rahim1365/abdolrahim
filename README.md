@@ -6,7 +6,7 @@ class TestTaskManager(unittest.TestCase):
         manager = TaskManager()
         manager.add_task("Test Task")
         self.assertEqual(len(manager.tasks), 1)
-        elf.assertEqual(manager.tasks[0].title, "Test Task")
+        lf.assertEqual(manager.tasks[0].title, "Test Task")
 
      test_mark_done(self):
         manager = TaskManager()
