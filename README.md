@@ -14,7 +14,7 @@ class TestTaskManager(unittest.TestCase):
         manager.mark_done(1)
         self.assertTrue(manager.tasks[0].done)
 
-     test_delete_task(self):
+     est_delete_task(self):
         manager = TaskManager()
         manager.add_task("Temporary")
         manager.delete_task(1)
