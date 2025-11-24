@@ -1,24 +1,77 @@
-importe unit
-rom tasks import TaskMa
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from database import get_db
+from models import Task, User
 
-lass TestTaskManager(unittest.TestCase):
-    def test_add_and_list_tasks(self):
-        manager = TaskManager()
-        manager.add_task("Test Task")
-        self.assertEqual(len(manager.tasks), 1)
-        lf.assertEqual(manager.tasks[0].title, "Test Task")
+router = APIRouter(prefix="/tasks", tags=["Tasks"])
 
-     test_mark_done(self):
-        manager = TaskManager()
-        manager.add_task("Do homework")
-        manager.mark_done(1)
-        self.assertTrue(manager.tasks[0].done)
+@router.post("/")
+def create_task(
+    title: str,
+    description: str,
+    user_id: int,
+    db: Session = Depends(get_db)
+):
 
-     est_delete_task(self):
-        manager = TaskManager()
-        manager.add_task("Temporary")
-        manager.delete_task(1)
-        self.assertEqual(len(manager.tasks), 0)
+    # چک کردن وجود کاربر
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User does not exist")
 
-if __name__ == "__main__":
-    unittest.main()
+    task = Task(
+        title=title,
+        description=description,
+        user_id=user_id
+    )
+
+    db.add(task)
+    db.commit()
+    db.refresh(task)
+    return task
+
+
+@router.get("/")
+def get_all_tasks(db: Session = Depends(get_db)):
+    return db.query(Task).all()
+
+
+@router.get("/{task_id}")
+def get_task(task_id: int, db: Session = Depends(get_db)):
+    task = db.query(Task).filter(Task.id == task_id).first()
+
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+
+    return task
+
+
+@router.put("/{task_id}")
+def update_task(task_id: int, title: str, description: str, completed: bool, db: Session = Depends(get_db)):
+
+    task = db.query(Task).filter(Task.id == task_id).first()
+
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+
+    task.title = title
+    task.description = description
+    task.completed = completed
+
+    db.commit()
+    db.refresh(task)
+
+    return task
+
+
+@router.delete("/{task_id}")
+def delete_task(task_id: int, db: Session = Depends(get_db)):
+
+    task = db.query(Task).filter(Task.id == task_id).first()
+
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+
+    db.delete(task)
+    db.commit()
+
+    return {"message": "Task deleted successfully"}
