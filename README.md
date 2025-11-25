@@ -3,9 +3,9 @@ from sqlalchemy.orm import Session
 from database import get_db
 from models import Task, User
 
-router = APIRouter(prefix="/tasks", tags=["Tasks"])
+outer = APIRouter(prefix="/tasks", tags=["Tasks"])
 
-router.post("/")
+@router.post("/")
 def create_task(
     title: str,
     description: str,
