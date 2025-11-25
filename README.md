@@ -5,7 +5,7 @@ from models import Task, User
 
 router = APIRouter(prefix="/tasks", tags=["Tasks"])
 
-@router.post("/")
+router.post("/")
 def create_task(
     title: str,
     description: str,
