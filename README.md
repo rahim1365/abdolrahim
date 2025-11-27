@@ -60,7 +60,7 @@ def update_task(task_id: int, title: str, description: str, completed: bool, db:
     db.commit()
     db.refresh(task)
 
-    return task
+    return tas
 
 
 @router.delete("/{task_id}")
