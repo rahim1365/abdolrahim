@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPExceptio
 from sqlalchemy.orm import Session
-from database import get_d
+from database import get_db
 from models import Task, User
 
 outer = APIRouter(prefix="/tasks", tags=["Tasks"])
