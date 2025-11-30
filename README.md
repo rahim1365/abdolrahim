@@ -15,7 +15,7 @@ def create_task(
 
     # چک کردن وجود کاربر
     user = db.query(User).filter(User.id == user_id).first()
-    if not user:
+    f not user:
         raise HTTPException(status_code=404, detail="User does not exist")
 
     task = Task(
