@@ -55,7 +55,7 @@ def update_task(task_id: int, title: str, description: str, completed: bool, db:
 
     task.title = title
     task.description = description
-    task.completed = completed
+    task.completed = complete
 
 db    .commit()
     db.refresh(task)
