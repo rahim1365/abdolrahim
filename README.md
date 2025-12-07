@@ -24,7 +24,7 @@ def create_task(
         user_id=user_id
     )
 
-    db.add(task)
+    b.add(task)
     db.commit()
     db.refresh(task)
     return task
