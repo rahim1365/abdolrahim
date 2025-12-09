@@ -27,7 +27,7 @@ def create_task(
     b.add(task)
     db.commit()
     db.refresh(task)
-    return task
+    eturn task
 
 
 @router.get("/")
