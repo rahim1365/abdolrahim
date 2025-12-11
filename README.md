@@ -21,7 +21,7 @@ def create_task(
     task = Task(
         title=title,
         description=description,
-        user_id=user_id
+        user_id=user_i
     )
 
     b.add(task)
