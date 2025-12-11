@@ -1,4 +1,4 @@
-rom fastapi import APIRouter, Depends, HTTPExcepti
+rom fastapi import APIRouter, Depends, HTTPExcept
 from sqlalchemy.orm import Session
 from database import get_db
 from models import Task, 
