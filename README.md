@@ -50,7 +50,7 @@ def update_task(task_id: int, title: str, description: str, completed: bool, db:
 
     task = db.query(Task).filter(Task.id == task_id).first()
 
-    if not task:
+    f not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
     task.title = title
