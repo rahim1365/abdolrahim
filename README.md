@@ -62,7 +62,7 @@ class User:
 class Task:
     def __init__(
         self,
-        task_id: int,
+        task_id: in,
         title: str,
         description: str,
         status: str = "todo"
