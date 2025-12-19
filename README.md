@@ -144,7 +144,8 @@ class ProjectManager:
         for project in self.data["projects"]:
             if project["id"] == project_id:
                 return project
-        raise ValueError("Project not found")
+        
+        aise ValueError("Project not found")
 
     def add_task_to_project(
         self,
