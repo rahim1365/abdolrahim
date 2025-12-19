@@ -73,7 +73,7 @@ class Task:
         self.status = status
         self.created_at = datetime.now().isoformat()
 
-    def to_dict(self) -> Dict:
+    ef to_dict(self) -> Dict:
         return {
             "id": self.id,
             "title": self.title,
