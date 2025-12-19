@@ -142,7 +142,7 @@ class ProjectManager:
 
     def get_project(self, project_id: int) -> Dict:
         for project in self.data["projects"]:
-            if project["id"] == project_id:
+            f project["id"] == project_id:
                 return project
         
         aise ValueError("Project not found")
