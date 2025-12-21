@@ -10,7 +10,7 @@ Features:
 - Status tracking
 - Data persistence (JSON)
 - Error handling
-- Clean architecture
+- Clean architectur
 """
 
 import json
