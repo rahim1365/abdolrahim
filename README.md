@@ -36,7 +36,7 @@ def save_data(data: Dict) -> None:
         json.dump(data, f, i generate_id(items: List[Dict]) -> int:
     if not items:
         return 1
-    return max(item["id"] for item in items) + 1
+def return max(item["id"] for item in items) + 1
 
 
 # -----------------------------
