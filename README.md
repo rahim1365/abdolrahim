@@ -33,10 +33,7 @@ def load_data() -> Dict:
 
 def save_data(data: Dict) -> None:
     with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4)
-
-
-def generate_id(items: List[Dict]) -> int:
+        json.dump(data, f, i generate_id(items: List[Dict]) -> int:
     if not items:
         return 1
     return max(item["id"] for item in items) + 1
