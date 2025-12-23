@@ -56,7 +56,7 @@ class User:
         }
 
 
-lass Task:
+class Task:
     def __init__(
         self,
         task_id: in,
