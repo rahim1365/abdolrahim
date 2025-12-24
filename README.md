@@ -3,7 +3,7 @@ Project Manager System
 ----------------------
  long, well-structured Python project suitable for a GitHub repository.
 
-eatures:
+features:
 - User management
 - Project management
 - Task management
