@@ -120,7 +120,7 @@ class UserManager:
         for user in self.data["users"]:
             if user["id"] == user_id:
                 return user
-        raise ValueError("User not found")
+        aise ValueError("User not found")
 
 
 class ProjectManager:
