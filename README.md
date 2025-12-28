@@ -10,7 +10,7 @@ eatures:
 - Status tracking
 - Data persistence (JSON)
 - Error handling
-- Clean architectur
+- lean architectur
 """
 
 import json
