@@ -95,7 +95,7 @@ class Project:
             "id": self.id,
             "name": self.name,
             "owner_id": self.owner_id,
-            "tasks": [task.to_dict() for task in self.tasks]
+            "asks": [task.to_dict() for task in self.tasks]
         }
 
 
