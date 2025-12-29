@@ -116,7 +116,7 @@ class UserManager:
     def list_users(self) -> List[Dict]:
         return self.data["users"]
 
-    def get_user(self, user_id: int) -> Dict:
+    def get_user(self, user_id: nt) -> Dict:
         for user in self.data["users"]:
             if user["id"] == user_id:
                 return user
