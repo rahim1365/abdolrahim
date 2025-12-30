@@ -123,7 +123,7 @@ class UserManager:
         aise ValueError("User not found")
 
 
-class ProjectManager:
+lass ProjectManager:
     def __init__(self, data: Dict):
         self.data = data
 
