@@ -137,7 +137,7 @@ lass ProjectManager:
     def list_projects(self) -> List[Dict]:
         return self.data["projects"]
 
-    def get_project(self, project_id: int) -> Dict:
+    ef get_project(self, project_id: int) -> Dict:
         for project in self.data["projects"]:
             f project["id"] == project_id:
                 return project
