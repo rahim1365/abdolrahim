@@ -132,7 +132,7 @@ lass ProjectManager:
         project = Project(project_id, name, owner_id)
         self.data["projects"].append(project.to_dict())
         save_data(self.data)
-        return project
+        retur project
 
     def list_projects(self) -> List[Dict]:
         return self.data["projects"]
