@@ -228,7 +228,7 @@ class CLI:
     def create_project(self):
         name = input("Project name: ")
         owner_id = int(input("Owner user ID: "))
-        roject = self.project_manager.create_project(name, owner_id)
+        project = self.project_manager.create_project(name, owner_id)
         print(f"Project created with ID {project.id}")
 
     def list_projects(self):
