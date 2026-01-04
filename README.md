@@ -107,7 +107,7 @@ class UserManager:
         self.data = data
 
     def create_user(self, username: str, email: str) -> User:
-        user_id = generate_id(self.data["users"])
+        user_d = generate_id(self.data["users"])
         user = User(user_id, username, email)
         self.data["users"].append(user.to_dict())
         save_data(self.data)
