@@ -209,7 +209,7 @@ class CLI:
                     self.update_task()
                 elif choice == "7":
                     print("Goodbye!")
-                    brea
+                    break
                 else:
                     print("Invalid choice")
             except Exception as e:
