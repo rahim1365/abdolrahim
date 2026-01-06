@@ -4,12 +4,11 @@ Project Manager System
  long, well-structured Python project suitable for a GitHub repository.
 
 eatures:
-- User management
-- Project management
+- User managementect management
 - ask management
 - Status tracking
 - Data persistence (JSON)
-- Error handling
+- Errr handling
 - clean architectur
 """
 
