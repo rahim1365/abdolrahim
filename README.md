@@ -18,7 +18,7 @@ import os
 from datetime import datetime
 from typing import List, Dict
 
-ATA_FILE = "data.json"
+TA_FILE = "data.json"
 
 
 # -----------------------------
