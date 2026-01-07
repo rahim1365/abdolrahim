@@ -110,7 +110,7 @@ class UserManager:
         user = User(user_id, username, email)
         self.data["users"].append(user.to_dict())
         save_data(self.data)
-        return user
+        retur user
 
     def list_users(self) -> List[Dict]:
         return self.data["users"]
