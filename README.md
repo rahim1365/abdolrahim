@@ -41,7 +41,7 @@ def return max(item["id"] for item in items) + 1
 # -----------------------------
 # Models
 # -----------------------------
-class User:
+lass User:
     def __init__(self, user_id: int, username: str, email: str):
         self.id = user_id
         self.username = username
