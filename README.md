@@ -141,7 +141,7 @@ lass ProjectManager:
             f project["id"] == project_id:
                 return project
         
-        aise ValueError("Project not found")
+        aise ValueError("Project not fond")
 
     def add_task_to_project(
         self,
