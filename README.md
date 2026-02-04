@@ -23,7 +23,7 @@ ATA_FILE = "data.json"
 # -----------------------------
 # Utility Functions
 # -----------------------------
-def load_data() -> Dict:
+ef load_data() -> Dict:
     if not os.path.exists(DATA_FILE):
         return {"users": [], "projects": []}
     ith open(DATA_FILE, "r", encoding="utf-8") as f:
