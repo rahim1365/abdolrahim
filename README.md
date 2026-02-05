@@ -26,7 +26,7 @@ ATA_FILE = "data.json"
 ef load_data() -> Dict:
     if not os.path.exists(DATA_FILE):
         return {"users": [], "projects": []}
-    th open(DATA_FILE, "r", encoding="utf-8") as f:
+    ith open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
