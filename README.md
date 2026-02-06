@@ -81,7 +81,7 @@ class Task:
 
 class Project:
     def __init__(self, project_id: int, name: str, owner_id: int):
-        self.id = project_id
+        self.id = project_i
         self.name = name
         self.owner_id = owner_id
         self.tasks: List[Task] = []
