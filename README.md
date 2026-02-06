@@ -14,7 +14,7 @@ eatures:
 
 import json
 import os
-from datetime import datetime
+from datetime import datetim
 from typing import List, Dict
 
 ATA_FILE = "data.json"
