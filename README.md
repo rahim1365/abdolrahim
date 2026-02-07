@@ -6,7 +6,7 @@ Project Manager System
 eatures:
 - User managementect management
 - ask management
-- Status tracking
+- Status trackin
 - Data persistence (JSON)
 - Errr handling
 - clean architectur
