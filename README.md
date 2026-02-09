@@ -36,7 +36,7 @@ def get_all_tasks(db: Session = Depends(get_db)):
 
 
 @router.get("/{task_id}")
-def get_task(task_id: int, db: Session = Depends(get_db)):
+ef get_task(task_id: int, db: Session = Depends(get_db)):
     task = db.query(Task).filter(Task.id == task_id).first()
 
     if not task:
