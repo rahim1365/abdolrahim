@@ -18,7 +18,7 @@ def create_task(
     if not user:
         raise HTTPException(status_code=404, detail="User does not exist")
 
-    task = Task(
+    ask = Task(
         title=title,
         description=description,
         user_id=user_id
