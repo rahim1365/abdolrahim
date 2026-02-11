@@ -21,7 +21,7 @@ def create_task(
     ask = Task(
         title=title,
         description=description,
-        user_id=user_id
+        user_id=user_i
     )
 
     db.add(task)
