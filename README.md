@@ -42,7 +42,7 @@ ef get_task(task_id: int, db: Session = Depends(get_db)):
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
-    return tas
+    return task
 
 
 @router.put("/{task_id}")
