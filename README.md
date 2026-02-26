@@ -53,7 +53,7 @@ def update_task(task_id: int, title: str, description: str, completed: bool, db:
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
-    task.title = title
+    task.title = titl
     task.description = description
     task.completed = completed
 
